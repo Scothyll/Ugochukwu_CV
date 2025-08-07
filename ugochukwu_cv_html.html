@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ugochukwu Ibeawuchi - End User Computing Specialist</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .cv-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .name {
+            font-size: 3em;
+            font-weight: 300;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        .title {
+            font-size: 1.3em;
+            margin-bottom: 20px;
+            color: #ecf0f1;
+            font-weight: 400;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95em;
+        }
+
+        .contact-item a {
+            color: #74b9ff;
+            text-decoration: none;
+        }
+
+        .content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 0;
+        }
+
+        .sidebar {
+            background: #f8f9fa;
+            padding: 40px 30px;
+        }
+
+        .main-content {
+            padding: 40px;
+        }
+
+        .section {
+            margin-bottom: 35px;
+        }
+
+        .section-title {
+            font-size: 1.4em;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #74b9ff;
+            font-weight: 600;
+        }
+
+        .sidebar .section-title {
+            color: #2c3e50;
+            border-bottom-color: #6c5ce7;
+        }
+
+        .skills-grid {
+            display: grid;
+            gap: 20px;
+        }
+
+        .skill-category {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .skill-category h4 {
+            color: #6c5ce7;
+            font-size: 1.1em;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .skill-category ul {
+            list-style: none;
+        }
+
+        .skill-category li {
+            padding: 4px 0;
+            position: relative;
+            padding-left: 15px;
+        }
+
+        .skill-category li:before {
+            content: "▸";
+            color: #74b9ff;
+            position: absolute;
+            left: 0;
+        }
+
+        .job {
+            margin-bottom: 35px;
+            padding: 25px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 5px solid #74b9ff;
+        }
+
+        .job-header {
+            margin-bottom: 15px;
+        }
+
+        .job-title {
+            font-size: 1.3em;
+            color: #2c3e50;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .company {
+            color: #74b9ff;
+            font-weight: 600;
+            font-size: 1.1em;
+        }
+
+        .job-period {
+            color: #666;
+            font-style: italic;
+            margin-top: 5px;
+        }
+
+        .job-description ul {
+            margin-top: 15px;
+            padding-left: 20px;
+        }
+
+        .job-description li {
+            margin-bottom: 8px;
+            text-align: justify;
+        }
+
+        .project {
+            background: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #00b894;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .project-title {
+            color: #00b894;
+            font-weight: 600;
+            font-size: 1.1em;
+            margin-bottom: 5px;
+        }
+
+        .project-details {
+            color: #666;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+
+        .certification {
+            background: linear-gradient(135deg, #74b9ff, #0984e3);
+            color: white;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(116, 185, 255, 0.3);
+        }
+
+        .cert-name {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .cert-year {
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+
+        .education-item {
+            background: white;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .degree {
+            color: #6c5ce7;
+            font-weight: 600;
+            font-size: 1.1em;
+            margin-bottom: 5px;
+        }
+
+        .university {
+            color: #666;
+            margin-bottom: 5px;
+        }
+
+        .grad-date {
+            color: #888;
+            font-size: 0.9em;
+            font-style: italic;
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, #fd79a8, #fdcb6e);
+            color: white;
+            padding: 3px 8px;
+            border-radius: 15px;
+            font-size: 0.85em;
+            font-weight: 600;
+            display: inline-block;
+            margin: 2px;
+        }
+
+        @media (max-width: 968px) {
+            .content {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+            
+            .name {
+                font-size: 2.2em;
+            }
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+            
+            .header,
+            .sidebar,
+            .main-content {
+                padding: 20px;
+            }
+            
+            .name {
+                font-size: 1.8em;
+            }
+        }
+
+        .print-friendly {
+            display: none;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .cv-container {
+                box-shadow: none;
+                border-radius: 0;
+            }
+            
+            .content {
+                grid-template-columns: 1fr 2fr;
+            }
+            
+            .print-friendly {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cv-container">
+        <header class="header">
+            <h1 class="name">Ugochukwu Ibeawuchi</h1>
+            <p class="title">End User Computing | Microsoft Intune | Windows DevOps</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span>📍</span> United Kingdom
+                </div>
+                <div class="contact-item">
+                    <span>✉️</span> <a href="mailto:uibeawuchi7@gmail.com">uibeawuchi7@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <span>☎️</span> +44 07737520705
+                </div>
+                <div class="contact-item">
+                    <span>🔗</span> <a href="https://www.linkedin.com/in/uibeawuchi" target="_blank">LinkedIn Profile</a>
+                </div>
+            </div>
+        </header>
+
+        <div class="content">
+            <aside class="sidebar">
+                <section class="section">
+                    <h2 class="section-title">Core Skills</h2>
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h4>Endpoint & Device Management</h4>
+                            <ul>
+                                <li>Microsoft Intune (MDM/MAM)</li>
+                                <li>Autopilot & Company Portal</li>
+                                <li>Win32 App Deployment</li>
+                                <li>Windows Update for Business</li>
+                                <li>Compliance Policies</li>
+                                <li>BitLocker</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <h4>Security & Identity</h4>
+                            <ul>
+                                <li>Entra ID (Azure AD)</li>
+                                <li>Conditional Access & MFA</li>
+                                <li>RBAC & SSO</li>
+                                <li>Defender for Endpoint</li>
+                                <li>DLP & Sensitivity Labels</li>
+                                <li>Zero Trust Architecture</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <h4>Automation & Tools</h4>
+                            <ul>
+                                <li>PowerShell & Pester</li>
+                                <li>Windows Configuration Designer</li>
+                                <li>LogicMonitor & SCCM</li>
+                                <li>MS Graph & GitHub</li>
+                                <li>CI/CD Pipelines</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <h4>Service Management</h4>
+                            <ul>
+                                <li>ConnectWise & ServiceNow</li>
+                                <li>SLA Dashboards</li>
+                                <li>ITIL Framework</li>
+                                <li>Change Advisory Board (CAB)</li>
+                                <li>Technical Documentation</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <h2 class="section-title">Certifications</h2>
+                    <div class="certification">
+                        <div class="cert-name">Microsoft Certified: Endpoint Administrator Associate (MD-102)</div>
+                        <div class="cert-year">2024</div>
+                    </div>
+                    <div class="certification">
+                        <div class="cert-name">LogicMonitor Certified Associate</div>
+                        <div class="cert-year">2024</div>
+                    </div>
+                    <div class="certification">
+                        <div class="cert-name">Microsoft Certified: Azure Fundamentals (AZ-900)</div>
+                        <div class="cert-year">2023</div>
+                    </div>
+                    <div class="certification">
+                        <div class="cert-name">Microsoft Certified: Security, Compliance & Identity Fundamentals (SC-900)</div>
+                        <div class="cert-year">2023</div>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <h2 class="section-title">Education</h2>
+                    <div class="education-item">
+                        <div class="degree">M.Sc. Cloud and Network Security</div>
+                        <div class="university">University of Bolton, Greater Manchester, UK</div>
+                        <div class="grad-date">October 2023</div>
+                    </div>
+                    <div class="education-item">
+                        <div class="degree">B.Sc. Statistics and Computer Science</div>
+                        <div class="university">University of Port-Harcourt, Nigeria</div>
+                        <div class="grad-date">February 2019</div>
+                    </div>
+                </section>
+            </aside>
+
+            <main class="main-content">
+                <section class="section">
+                    <h2 class="section-title">Professional Experience</h2>
+                    
+                    <div class="job">
+                        <div class="job-header">
+                            <h3 class="job-title">Senior End User Computing Engineer</h3>
+                            <div class="company">Lima Networks (MSP)</div>
+                            <div class="job-period">March 2024 – Present</div>
+                        </div>
+                        <div class="job-description">
+                            <ul>
+                                <li>Led the transformation of device onboarding processes by designing and implementing <span class="highlight">Zero Touch Windows Autopilot</span> and Intune-based provisioning across <strong>3,000+ endpoints</strong>, reducing setup time from 4 hours to under 45 minutes.</li>
+                                <li>Developed and tested a <span class="highlight">Local Administrator Password Solution (LAPS)</span> using PowerShell and Pester while leading strategic deployment via CI/CD pipelines using GitHub and Microsoft Graph API.</li>
+                                <li>Championed service excellence by implementing feedback loops, monthly team retrospectives, and aligning support practices with <span class="highlight">ITIL principles</span>.</li>
+                                <li>Oversaw creation and deployment of a Bulk Enrollment script using Windows Configuration Designer (WCD) to provision and configure <strong>250 Windows devices</strong>.</li>
+                                <li>Owned end-to-end automation of device patching, registry cleanup, and packaged app deployment using PowerShell and Intune.</li>
+                                <li>Led endpoint monitoring and patching operations using LogicMonitor and Intune compliance policies.</li>
+                                <li>Provided technical leadership and mentorship to junior engineers by creating and maintaining a centralized knowledge repository.</li>
+                                <li>Leveraged <span class="highlight">Intune Endpoint Analytics</span> to lead compliance assessments and health trend analysis, delivering actionable reports.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="job">
+                        <div class="job-header">
+                            <h3 class="job-title">End User Support Engineer</h3>
+                            <div class="company">Access Bank Plc (Banking)</div>
+                            <div class="job-period">September 2021 – April 2022</div>
+                        </div>
+                        <div class="job-description">
+                            <ul>
+                                <li>Collaborated with mobility team to implement <span class="highlight">Intune App Protection Policies</span> for Outlook and Edge on iOS/Android.</li>
+                                <li>Onboarded new starters in Active Directory and Microsoft 365, managed security group assignments, and enforced MFA.</li>
+                                <li>Conducted <span class="highlight">Secure Score assessments</span> and deployed Conditional Access and RBAC policies to support ISO27001 alignment.</li>
+                                <li>Diagnosed and resolved complex user issues across SharePoint, OneDrive, Teams, and Microsoft Purview.</li>
+                                <li>Investigated and resolved hybrid Exchange and Azure AD sync issues ensuring reliable authentication and mail flow.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="job">
+                        <div class="job-header">
+                            <h3 class="job-title">IT Support Engineer</h3>
+                            <div class="company">Total Security Insurance Brokers (Insurance)</div>
+                            <div class="job-period">December 2019 – September 2021</div>
+                        </div>
+                        <div class="job-description">
+                            <ul>
+                                <li>Delivered technical support for Microsoft 365, VPN, printing, and performance issues.</li>
+                                <li>Provided end-user training during migration from Skype for Business to Microsoft Teams.</li>
+                                <li>Implemented daily health checks using remote monitoring tools to identify performance issues.</li>
+                                <li>Rapidly deployed VPN clients and MFA for <strong>150+ employees</strong> during pandemic remote work transition.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <h2 class="section-title">Notable Projects</h2>
+                    
+                    <div class="project">
+                        <div class="project-title">Enterprise Autopilot & Intune Deployment – Multi-Site Rollout (2024)</div>
+                        <div class="project-details">Client: National Housing Association | Scope: 500+ devices, 4+ sites</div>
+                        <p>Led the design and deployment of a zero-touch Windows Autopilot provisioning framework. Configured dynamic deployment profiles, enforced segmentation via Azure AD groups, and automated onboarding using PowerShell and WCD.</p>
+                    </div>
+
+                    <div class="project">
+                        <div class="project-title">Windows 11 Rollout – Financial Services Sector (2024)</div>
+                        <div class="project-details">Client: Tier 1 Banking Organisation | Focus: 600+ device OS upgrade from Win 10 to 11</div>
+                        <p>Orchestrated enterprise-wide upgrade using Intune Update Rings, implementing phased deployment strategy ensuring hardware readiness, user preparedness, and uninterrupted business continuity.</p>
+                    </div>
+
+                    <div class="project">
+                        <div class="project-title">Group Policy to Intune Migration & Endpoint Hardening (2024)</div>
+                        <div class="project-details">Client: Healthcare Provider (NHS-aligned)</div>
+                        <p>Directed full GPO-to-Intune migration. Translated legacy settings to Intune profiles and implemented Defender for Endpoint. Collaborated with security to align policy enforcement with Zero Trust Architecture.</p>
+                    </div>
+
+                    <div class="project">
+                        <div class="project-title">Enterprise Win32 and Microsoft 365 App Deployment (2024)</div>
+                        <div class="project-details">Client: Building and Construction | Scope: 346 devices</div>
+                        <p>Successfully deployed 23 Win32 applications and 5 Microsoft 365 apps using Microsoft Intune, leveraging IntuneWinAppUtil and custom PowerShell scripts. Ensured seamless, silent installations via Company Portal.</p>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+</body>
+</html>
